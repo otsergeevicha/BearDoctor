@@ -74,9 +74,9 @@
             "doc": ""
         },
         {
-            "name": "LanguageYGLegasy",
+            "name": "AutoTranslateLangs",
             "version": "1.0",
-            "download": "https://max-games.ru/public/pluginYG2/packages/LanguageYGLegasy.unitypackage",
+            "download": "https://max-games.ru/public/pluginYG2/packages/AutoTranslateLangs.unitypackage",
             "doc": "",
             "dependencies": "EnvirData, Localization"
         },

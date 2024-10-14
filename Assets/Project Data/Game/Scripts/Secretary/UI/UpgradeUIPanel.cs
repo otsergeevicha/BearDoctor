@@ -109,7 +109,13 @@ namespace Watermelon
             }
 
             // Set level
-            levelText.text = string.Format(GetCurrentLevelName(YG2.lang), upgrade.UpgradeLevel + 1);
+
+#if UNITY_EDITOR
+            levelText.text = $"Lvl {upgrade.UpgradeLevel + 1}";
+            return;
+#endif
+            
+            levelText.text = $"{GetCurrentLevelName(YG2.lang)} {upgrade.UpgradeLevel + 1}";
         }
 
         public void PurchaseButton()
