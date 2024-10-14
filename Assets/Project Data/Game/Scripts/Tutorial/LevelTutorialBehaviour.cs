@@ -1,6 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 using Watermelon.LevelSystem;
+using YG;
 
 namespace Watermelon
 {
@@ -24,25 +25,20 @@ namespace Watermelon
         [SerializeField] Transform animalTableTransform;
         [SerializeField] Transform hireZoneTransform;
 
-        [Space]
-        [SerializeField] DispenserBuilding soapDispenser;
+        [Space] [SerializeField] DispenserBuilding soapDispenser;
         [SerializeField] DispenserBuilding injectionDispenser;
 
-        [Space]
-        [SerializeField] MoneyStackBehaviour moneyStackBehaviour;
+        [Space] [SerializeField] MoneyStackBehaviour moneyStackBehaviour;
 
-        [Space]
-        [SerializeField] SecretaryInteractionZone secretaryInteractionZone;
+        [Space] [SerializeField] SecretaryInteractionZone secretaryInteractionZone;
 
-        [Space]
-        [SerializeField] TableBehaviour secondTableBehaviour;
+        [Space] [SerializeField] TableBehaviour secondTableBehaviour;
         [SerializeField] TableBehaviour thirdTableBehaviour;
         [SerializeField] TableBehaviour fourthTableBehaviour;
         [SerializeField] TableZoneBehaviour tableZoneBehaviour;
         [SerializeField] TableZoneBehaviour secondTableZoneBehaviour;
 
-        [Space]
-        [SerializeField] Zone secondZone;
+        [Space] [SerializeField] Zone secondZone;
         [SerializeField] Zone thirdZone;
         [SerializeField] Transform secondZonePurchaseTransform;
 
@@ -118,14 +114,16 @@ namespace Watermelon
 
         private void OnTableZoneUnlocked(TableZoneBehaviour tableZoneBehaviour)
         {
-            if (TutorialController.CurrentTutorialStage == TutorialStage.UnlockTableZone && tableZoneBehaviour.TableZoneID == 1)
+            if (TutorialController.CurrentTutorialStage == TutorialStage.UnlockTableZone &&
+                tableZoneBehaviour.TableZoneID == 1)
             {
                 if (tutorialArrowBehaviour != null)
                     tutorialArrowBehaviour.Disable();
 
                 TutorialController.EnableTutorial(TutorialStage.HireNurse);
             }
-            else if (TutorialController.CurrentTutorialStage == TutorialStage.UnlockSecondTableZone && tableZoneBehaviour.TableZoneID == 2)
+            else if (TutorialController.CurrentTutorialStage == TutorialStage.UnlockSecondTableZone &&
+                     tableZoneBehaviour.TableZoneID == 2)
             {
                 if (tutorialArrowBehaviour != null)
                     tutorialArrowBehaviour.Disable();
@@ -153,7 +151,14 @@ namespace Watermelon
                         Tween.DelayedCall(0.5f, delegate
                         {
                             // Open rate us page
-                            UIController.ShowPage<UIRateUs>();
+                            //UIController.ShowPage<UIRateUs>();
+
+#if UNITY_EDITOR
+                            Debug.Log($"Review show");
+                            return;
+#endif
+
+                            YG2.ReviewShow();
                         });
                     }
                 });
@@ -190,7 +195,8 @@ namespace Watermelon
             // Get player behaviour
             PlayerBehavior playerBehavior = PlayerBehavior.GetBehavior();
 
-            if (TutorialController.CurrentTutorialStage == TutorialStage.PickFirstAnimal && item.ItemType == FIRST_ITEM_TYPE)
+            if (TutorialController.CurrentTutorialStage == TutorialStage.PickFirstAnimal &&
+                item.ItemType == FIRST_ITEM_TYPE)
             {
                 isItemPicked = true;
 
@@ -200,9 +206,11 @@ namespace Watermelon
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, animalTableTransform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, animalTableTransform,
+                    arrowColor, ARROW_DISABLE_DISTANCE, true);
             }
-            else if (TutorialController.CurrentTutorialStage == TutorialStage.PickSecondAnimal && item.ItemType == SECOND_ITEM_TYPE)
+            else if (TutorialController.CurrentTutorialStage == TutorialStage.PickSecondAnimal &&
+                     item.ItemType == SECOND_ITEM_TYPE)
             {
                 isItemPicked = true;
 
@@ -212,7 +220,8 @@ namespace Watermelon
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, animalTableTransform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, animalTableTransform,
+                    arrowColor, ARROW_DISABLE_DISTANCE, true);
             }
         }
 
@@ -229,12 +238,14 @@ namespace Watermelon
                 injectionDispenser.SetUnlockState(false);
                 soapDispenser.SetUnlockState(true);
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(soapDispenser.transform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(soapDispenser.transform.position + new Vector3(0, 8, 0));
 
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, soapDispenser.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, soapDispenser.transform,
+                    arrowColor, ARROW_DISABLE_DISTANCE, true);
 
                 // Disable joystick
                 uiGame.Joystick.DisableControl();
@@ -263,9 +274,12 @@ namespace Watermelon
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(injectionDispenser.transform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(injectionDispenser.transform.position +
+                                                           new Vector3(0, 8, 0));
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, injectionDispenser.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform,
+                    injectionDispenser.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
             }
         }
 
@@ -297,13 +311,15 @@ namespace Watermelon
             {
                 isAnimalPicked = true;
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, animalTableTransform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, animalTableTransform,
+                    arrowColor, ARROW_DISABLE_DISTANCE, true);
             }
             else if (TutorialController.CurrentTutorialStage == TutorialStage.PickSecondAnimal)
             {
                 isAnimalPicked = true;
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, animalTableTransform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, animalTableTransform,
+                    arrowColor, ARROW_DISABLE_DISTANCE, true);
             }
         }
 
@@ -333,7 +349,6 @@ namespace Watermelon
 
         public void OnGameLoaded()
         {
-
         }
 
         private void ActivateStage(TutorialStage tutorialStage)
@@ -368,7 +383,8 @@ namespace Watermelon
                     spawnedVisitor = animalSpawner.SpawnVisitorWithRandomAnimal(FIRST_ANIMAL_TYPE, FIRST_SICKNESS_TYPE);
                     spawnedAnimal = spawnedVisitor.AnimalBehaviour;
 
-                    navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, spawnedAnimal.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                    navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform,
+                        spawnedAnimal.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
 
                     // Disable joystick
                     uiGame.Joystick.DisableControl();
@@ -414,13 +430,15 @@ namespace Watermelon
 
                 NavMeshController.InvokeOrSubscribe(delegate
                 {
-                    spawnedVisitor = animalSpawner.SpawnVisitorWithRandomAnimal(SECOND_ANIMAL_TYPE, SECOND_SICKNESS_TYPE);
+                    spawnedVisitor =
+                        animalSpawner.SpawnVisitorWithRandomAnimal(SECOND_ANIMAL_TYPE, SECOND_SICKNESS_TYPE);
                     spawnedAnimal = spawnedVisitor.AnimalBehaviour;
 
                     if (navigationArrow != null)
                         navigationArrow.DisableArrow();
 
-                    navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, spawnedAnimal.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                    navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform,
+                        spawnedAnimal.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
                 });
 
                 // Block interstitial
@@ -453,12 +471,15 @@ namespace Watermelon
                 // Set secretary zone block
                 secretaryInteractionZone.SetBlockState(true);
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(moneyStackBehaviour.transform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(
+                        moneyStackBehaviour.transform.position + new Vector3(0, 8, 0));
 
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, moneyStackBehaviour.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform,
+                    moneyStackBehaviour.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
 
                 // Block interstitial
                 AdsManager.SetInterstitialDelayTime(99999);
@@ -478,12 +499,15 @@ namespace Watermelon
                 // Set secretary zone block
                 secretaryInteractionZone.SetBlockState(true);
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(secondTableBehaviour.transform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(secondTableBehaviour.transform.position +
+                                                           new Vector3(0, 8, 0));
 
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, secondTableBehaviour.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform,
+                    secondTableBehaviour.transform, arrowColor, ARROW_DISABLE_DISTANCE, true);
 
                 // Block interstitial
                 AdsManager.SetInterstitialDelayTime(99999);
@@ -503,7 +527,9 @@ namespace Watermelon
                 // Set secretary zone block
                 secretaryInteractionZone.SetBlockState(true);
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(thirdTableBehaviour.transform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(
+                        thirdTableBehaviour.transform.position + new Vector3(0, 8, 0));
 
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
@@ -528,7 +554,9 @@ namespace Watermelon
                 // Set secretary zone block
                 secretaryInteractionZone.SetBlockState(true);
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(tableZoneBehaviour.transform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(tableZoneBehaviour.transform.position +
+                                                           new Vector3(0, 8, 0));
 
                 // Block interstitial
                 AdsManager.SetInterstitialDelayTime(99999);
@@ -548,12 +576,14 @@ namespace Watermelon
                 // Set secretary zone block
                 secretaryInteractionZone.SetBlockState(false);
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(hireZoneTransform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(hireZoneTransform.position + new Vector3(0, 8, 0));
 
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
 
-                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, hireZoneTransform, arrowColor, ARROW_DISABLE_DISTANCE, true);
+                navigationArrow = NavigationController.RegisterArrow(playerBehavior.transform, hireZoneTransform,
+                    arrowColor, ARROW_DISABLE_DISTANCE, true);
 
                 // Block interstitial
                 AdsManager.SetInterstitialDelayTime(99999);
@@ -573,7 +603,9 @@ namespace Watermelon
                 if (navigationArrow != null)
                     navigationArrow.DisableArrow();
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(secondTableZoneBehaviour.transform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(secondTableZoneBehaviour.transform.position +
+                                                           new Vector3(0, 8, 0));
 
                 // Enable interstitial
                 AdsManager.SetInterstitialDelayTime(0);
@@ -583,13 +615,13 @@ namespace Watermelon
                 secondZone.Unlock();
                 thirdZone.Unlock();
 
-                tutorialArrowBehaviour = TutorialController.CreateTutorialArrow(secondZonePurchaseTransform.position + new Vector3(0, 8, 0));
+                tutorialArrowBehaviour =
+                    TutorialController.CreateTutorialArrow(secondZonePurchaseTransform.position + new Vector3(0, 8, 0));
             }
         }
 
         private void DisableStage(TutorialStage tutorialStage)
         {
-
         }
 
         private void OnTutorialStageCompleted(TutorialStage tutorialStage, TutorialStage previousStage)

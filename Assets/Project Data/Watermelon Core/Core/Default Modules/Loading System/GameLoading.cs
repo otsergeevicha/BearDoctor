@@ -133,7 +133,7 @@ namespace Watermelon
 
         public static void LoadGameScene(SimpleCallback onSceneLoaded = null)
         {
-            SetLoadingMessage("Loading..");
+            //SetLoadingMessage("Loading..");
 
             Tween.InvokeCoroutine(LoadSceneCoroutine(onSceneLoaded));
         }

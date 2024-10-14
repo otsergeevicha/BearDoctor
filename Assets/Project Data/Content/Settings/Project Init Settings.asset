@@ -68,7 +68,7 @@ MonoBehaviour:
     type: 3}
   gdprPrefab: {fileID: 2665059414450368139, guid: 25b05165b3e164d41a5e0f7d29a77b0a,
     type: 3}
-  loadAdOnStart: 1
+  loadAdOnStart: 0
 --- !u!114 &4843368711887817407
 MonoBehaviour:
   m_ObjectHideFlags: 0

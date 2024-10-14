@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 namespace Watermelon
 {
@@ -19,9 +20,9 @@ namespace Watermelon
         public static void OpenStore()
         {
 #if UNITY_ANDROID
-            Application.OpenURL("market://details?id=" + Application.identifier);
+           // Application.OpenURL("market://details?id=" + Application.identifier);
 #elif UNITY_IPHONE
-        Application.OpenURL("itms-apps://itunes.apple.com/app/id" + GameController.Settings.AppleGameID);
+        //Application.OpenURL("itms-apps://itunes.apple.com/app/id" + GameController.Settings.AppleGameID);
 #endif
         }
     }

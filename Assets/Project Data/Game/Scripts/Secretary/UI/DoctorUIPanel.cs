@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using YG;
 
 namespace Watermelon
 {
@@ -59,10 +60,13 @@ namespace Watermelon
             currencyImage.sprite = currency.Icon;
 
             // Set name
-            nameText.text = nurseSettings.Title;
-
-            // Set icon
             iconImage.sprite = nurseSettings.Preview;
+            
+#if UNITY_EDITOR
+            nameText.text = nurseSettings.Title;
+            return;
+#endif
+            nameText.text = GetCurrentName(nurseSettings.Title);
         }
 
         public void Redraw(int openedIndex)
@@ -152,6 +156,27 @@ namespace Watermelon
                     uiSecretaryWindow.OnNursePurchased();
                 }
             });
+        }
+        
+        private const string Russian = "ru";
+        private const string English = "en";
+        private const string Turkish = "tr";
+
+        private string GetCurrentName(string upgradeName)
+        {
+            switch (YG2.lang)
+            {
+                case Russian:
+                    upgradeName = "Медбрат";
+                    break;
+                case English:
+                    break;
+                case Turkish:
+                    upgradeName = "Hemşire";
+                    break;
+            }
+
+            return upgradeName;
         }
     }
 }

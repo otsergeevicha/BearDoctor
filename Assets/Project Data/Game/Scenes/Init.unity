@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 658262529}
   - component: {fileID: 658262530}
   - component: {fileID: 658262531}
+  - component: {fileID: 658262532}
   m_Layer: 5
   m_Name: Loading
   m_TagString: Untagged
@@ -277,8 +278,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Loading..
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 499cf83f07b1eca49b41b4b547540c38, type: 2}
-  m_sharedMaterial: {fileID: 7543850439555462583, guid: 499cf83f07b1eca49b41b4b547540c38,
+  m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
+  m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -303,15 +304,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
+  m_fontSize: 72
   m_fontSizeBase: 90
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -345,6 +346,27 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &658262532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658262528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc477c5dd8c343d5937019ee567c6f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPicture: 0
+  _currentText: {fileID: 658262531}
+  _currentImage: {fileID: 0}
+  _ruText: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..."
+  _enText: Loading...
+  _trText: "Y\xFCkleniyor..."
+  _ruSprite: {fileID: 0}
+  _enSprite: {fileID: 0}
+  _trSprite: {fileID: 0}
 --- !u!1 &867133083
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9704167c327f3e4691bd9ecd2febe84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingText: {fileID: 658262531}
   backgroundImage: {fileID: 867133084}
 --- !u!4 &1998951720
 Transform:

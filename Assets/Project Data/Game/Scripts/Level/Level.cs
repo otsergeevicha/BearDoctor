@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using YG;
 
 namespace Watermelon
 {
@@ -14,6 +15,7 @@ namespace Watermelon
 
         public void Start()
         {
+            YG2.GameReadyAPI();
             LevelController.OnLevelCreated(this);
         }
 

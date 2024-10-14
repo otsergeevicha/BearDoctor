@@ -275,10 +275,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Doctor #2
+  m_text: Doctor
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 499cf83f07b1eca49b41b4b547540c38, type: 2}
-  m_sharedMaterial: {fileID: 7543850439555462583, guid: 499cf83f07b1eca49b41b4b547540c38,
+  m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
+  m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -303,15 +303,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 63.45
   m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 10
   m_fontSizeMax: 75
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 4096
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -640,6 +640,7 @@ GameObject:
   - component: {fileID: 8180517407649533285}
   - component: {fileID: 7849840107255711495}
   - component: {fileID: 4788226014161626260}
+  - component: {fileID: 4681512055165354760}
   m_Layer: 5
   m_Name: Hired Text
   m_TagString: Untagged
@@ -696,8 +697,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: HIRED
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
+  m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -716,7 +718,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -724,12 +726,12 @@ MonoBehaviour:
   m_fontSize: 65
   m_fontSizeBase: 65
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 10
   m_fontSizeMax: 65
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 4096
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -747,7 +749,7 @@ MonoBehaviour:
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1
-  m_isOrthographic: 0
+  m_isOrthographic: 1
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
@@ -763,6 +765,27 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4681512055165354760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3663111147623367391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc477c5dd8c343d5937019ee567c6f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPicture: 0
+  _currentText: {fileID: 4788226014161626260}
+  _currentImage: {fileID: 0}
+  _ruText: "\u041D\u0410\u041D\u042F\u0422"
+  _enText: HIRED
+  _trText: "K\u0130RALANDI"
+  _ruSprite: {fileID: 0}
+  _enSprite: {fileID: 0}
+  _trSprite: {fileID: 0}
 --- !u!1 &5201589920734284826
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +797,7 @@ GameObject:
   - component: {fileID: 920853159719566782}
   - component: {fileID: 6191138465605091162}
   - component: {fileID: 422774145006914290}
+  - component: {fileID: 5480814793005170881}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -797,8 +821,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -32.5, y: 3.4}
-  m_SizeDelta: {x: 87.23239, y: 70.6422}
+  m_AnchoredPosition: {x: -12.3494, y: 3.4}
+  m_SizeDelta: {x: 127.6904, y: 43.8672}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &6191138465605091162
 CanvasRenderer:
@@ -828,7 +852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dbf7a1eca5c6e464f926244d10d1fa03, type: 3}
+  m_Sprite: {fileID: 1934403998, guid: 45892eed702b4b6429a07e5dc53b712c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -838,6 +862,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5480814793005170881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5201589920734284826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc477c5dd8c343d5937019ee567c6f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPicture: 1
+  _currentText: {fileID: 0}
+  _currentImage: {fileID: 422774145006914290}
+  _ruText: 
+  _enText: 
+  _trText: 
+  _ruSprite: {fileID: -976957685, guid: 45892eed702b4b6429a07e5dc53b712c, type: 3}
+  _enSprite: {fileID: 1934403998, guid: 45892eed702b4b6429a07e5dc53b712c, type: 3}
+  _trSprite: {fileID: 281118800, guid: 45892eed702b4b6429a07e5dc53b712c, type: 3}
 --- !u!1 &5274927079565798655
 GameObject:
   m_ObjectHideFlags: 0

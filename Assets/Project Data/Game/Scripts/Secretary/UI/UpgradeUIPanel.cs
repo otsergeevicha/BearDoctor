@@ -4,13 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Watermelon.Upgrades;
+using YG;
 
 namespace Watermelon
 {
     public class UpgradeUIPanel : MonoBehaviour
     {
-        private const string LEVEL = "LVL {0}";
-
         [SerializeField] Image iconImage;
         [SerializeField] Image buttonImage;
         [SerializeField] Sprite buttonActiveSprite;
@@ -53,8 +52,14 @@ namespace Watermelon
             Redraw();
 
             // Set name
-            nameText.text = upgrade.Title;
             iconImage.sprite = upgrade.Icon;
+
+#if UNITY_EDITOR
+            nameText.text = upgrade.Title;
+            return;
+#endif
+            
+            nameText.text = GetCurrentName(upgrade.Title);
         }
 
         public void Redraw()
@@ -104,7 +109,7 @@ namespace Watermelon
             }
 
             // Set level
-            levelText.text = string.Format(LEVEL, upgrade.UpgradeLevel + 1);
+            levelText.text = string.Format(GetCurrentLevelName(YG2.lang), upgrade.UpgradeLevel + 1);
         }
 
         public void PurchaseButton()
@@ -142,6 +147,90 @@ namespace Watermelon
                     }
                 });
             }
+        }
+
+        private const string Russian = "ru";
+        private const string English = "en";
+        private const string Turkish = "tr";
+        
+        private const string DoctorStrength = "Doctor Strength";
+        private const string UpgradeTitle = "Doctor Speed";
+        private const string NursesSpeed = "Nurses Speed";
+        private const string PickUpSpeed = "Pick Up Speed";
+
+        private string GetCurrentLevelName(string lang)
+        {
+            string currentName = "LVL";
+
+            if (lang == Russian)
+                currentName = "УР";
+
+            return currentName;
+        }
+        
+        private string GetCurrentName(string upgradeTitle)
+        {
+            switch (upgradeTitle)
+            {
+                case DoctorStrength:
+                    
+                    switch (YG2.lang)
+                    {
+                        case Russian:
+                            upgradeTitle = "Сила доктора";
+                            break;
+                        case English:
+                        break;
+                        case Turkish:
+                            upgradeTitle =  "Doktor Gücü";
+                            break;
+                    }
+                    break;
+                case UpgradeTitle:
+                    
+                    switch (YG2.lang)
+                    {
+                        case Russian:
+                            upgradeTitle =  "Скорость доктора";
+                            break;
+                        case English:
+                            break;
+                        case Turkish:
+                            upgradeTitle =  "Doktor Hızı";
+                            break;
+                    }
+                    break;
+                case NursesSpeed:
+                    
+                    switch (YG2.lang)
+                    {
+                        case Russian:
+                            upgradeTitle =  "Скорость медбрата";
+                            break;
+                        case English:
+                            break;
+                        case Turkish:
+                            upgradeTitle =  "Hemşire Hızı";
+                            break;
+                    }
+                    break;
+                case PickUpSpeed:
+                    
+                    switch (YG2.lang)
+                    {
+                        case Russian:
+                            upgradeTitle =  "Взять скорость";
+                            break;
+                        case English:
+                            break;
+                        case Turkish:
+                            upgradeTitle =  "Hızlanın";
+                            break;
+                    }
+                    break;
+            }
+
+            return upgradeTitle;
         }
     }
 }
