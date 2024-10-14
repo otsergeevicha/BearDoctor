@@ -4,11 +4,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using Project_Data.Watermelon_Core.Core.Default_Modules.Advertisement.Scripts.Providers.Yandex;
 
 namespace Watermelon
 {
     [Define("MODULE_ADMOB")]
     [Define("MODULE_UNITYADS")]
+    [Define("MODULE_YANDEX")]
     public static class AdsManager
     {
         private const int INIT_ATTEMPTS_AMOUNT = 30;
@@ -93,6 +95,10 @@ namespace Watermelon
 
 #if MODULE_UNITYADS
             new UnityAdsLegacyHandler(AdvertisingModules.UnityAdsLegacy), // Unity Ads Legacy module
+#endif
+            
+#if MODULE_YANDEX
+            new YandexHandler(AdvertisingModules.Yandex)
 #endif
         };
 
@@ -403,6 +409,9 @@ namespace Watermelon
 
         public static void ShowInterstitial(AdvertisingHandler.InterstitialCallback callback)
         {
+            Debug.Log($"Это settings.InterstitialType - {settings.InterstitialType}");
+            Debug.Log($"Это callback - {callback}");
+            
             ShowInterstitial(settings.InterstitialType, callback);
         }
 

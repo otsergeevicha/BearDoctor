@@ -23,7 +23,7 @@ MonoBehaviour:
       index: 0
     boolSettings:
     - defaultValue: 1
-      value: 1
+      value: 0
     floatSettings:
     - defaultValue: 1
       value: 1

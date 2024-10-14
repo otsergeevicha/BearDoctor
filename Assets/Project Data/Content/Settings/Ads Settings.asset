@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ddb41bf72d53a48a6bdc593d706f94, type: 3}
   m_Name: Ads Settings
   m_EditorClassIdentifier: 
-  bannerType: 1
-  interstitialType: 1
-  rewardedVideoType: 1
+  bannerType: 4
+  interstitialType: 4
+  rewardedVideoType: 4
   adMobContainer:
     androidBannerID: ca-app-pub-1712885724409541/2075669230
     iOSBannerID: ca-app-pub-1712885724409541/7645111560
@@ -39,10 +39,10 @@ MonoBehaviour:
   dummyContainer:
     bannerPosition: 0
   testMode: 1
-  systemLogs: 0
+  systemLogs: 1
   insterstitialFirstDelay: 60
   interstitialShowingDelay: 100
-  isGDPREnabled: 1
+  isGDPREnabled: 0
   isIDFAEnabled: 0
   trackingDescription: Your data will be used to deliver personalized ads to you.
   privacyLink: https://mywebsite.com/privacy

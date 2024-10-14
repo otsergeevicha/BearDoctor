@@ -23,6 +23,7 @@ namespace Watermelon
             new DummyContainer("Dummy", "dummyContainer", string.Empty),
             new AdMobContainer("AdMob", "adMobContainer", "MODULE_ADMOB"),
             new UnityAdsContainer("Unity Ads Legacy", "unityAdsContainer", "MODULE_UNITYADS"),
+            new YandexEditorContainer("Yandex", "yandexContainer", "MODULE_YANDEX")
         };
 
         private static GUIContent arrowDownContent;
@@ -543,6 +544,17 @@ namespace Watermelon
         private class DummyContainer : AdsContainer
         {
             public DummyContainer(string containerName, string propertyName, string defineName) : base(containerName, propertyName, defineName)
+            {
+            }
+
+            protected override void SpecialButtons()
+            {
+            }
+        }
+        
+        private class YandexEditorContainer : AdsContainer
+        {
+            public YandexEditorContainer(string containerName, string propertyName, string defineName) : base(containerName, propertyName, defineName)
             {
             }
 

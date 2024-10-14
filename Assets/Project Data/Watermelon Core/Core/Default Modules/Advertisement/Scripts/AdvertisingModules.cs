@@ -6,6 +6,7 @@
         Dummy = 1,
         AdMob = 2,
         UnityAdsLegacy = 3,
+        Yandex = 4
     }
 }
 

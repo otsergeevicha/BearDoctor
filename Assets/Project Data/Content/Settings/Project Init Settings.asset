@@ -27,6 +27,7 @@ MonoBehaviour:
   m_Name: Project Init Settings
   m_EditorClassIdentifier: 
   initModules:
+  - {fileID: 2552028050777260788}
   - {fileID: -2744239200444536980}
   - {fileID: 5321261888481077867}
   - {fileID: 1541307628909891008}
@@ -49,6 +50,25 @@ MonoBehaviour:
   tweensFixedUpdateCount: 0
   tweensLateUpdateCount: 0
   enableSystemLogs: 0
+--- !u!114 &2552028050777260788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f517638b73f01c34780e6f4e044107a3, type: 3}
+  m_Name: Watermelon.AdsManagerInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Ads Manager
+  settings: {fileID: 11400000, guid: f0858c0f24b3ff5489e1fefb94c661e5, type: 2}
+  dummyCanvasPrefab: {fileID: 985655532585203946, guid: a7af08efc5cd16c4db955b7f65f00dfc,
+    type: 3}
+  gdprPrefab: {fileID: 2665059414450368139, guid: 25b05165b3e164d41a5e0f7d29a77b0a,
+    type: 3}
+  loadAdOnStart: 1
 --- !u!114 &4843368711887817407
 MonoBehaviour:
   m_ObjectHideFlags: 0

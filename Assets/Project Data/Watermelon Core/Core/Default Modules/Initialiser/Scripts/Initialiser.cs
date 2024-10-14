@@ -30,7 +30,7 @@ namespace Watermelon
 
                 SystemCanvas = systemCanvas;
                 InitialiserGameObject = gameObject;
-
+                
                 DontDestroyOnLoad(gameObject);
 
                 initSettings.Init(this);

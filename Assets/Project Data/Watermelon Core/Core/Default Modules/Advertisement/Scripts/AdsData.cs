@@ -1,5 +1,6 @@
 ﻿#pragma warning disable 0414
 
+using Project_Data.Watermelon_Core.Core.Default_Modules.Advertisement.Scripts.Providers.Yandex;
 using UnityEngine;
 
 namespace Watermelon
@@ -9,14 +10,18 @@ namespace Watermelon
     [HelpURL("https://docs.google.com/document/d/1JKw1XgdvJhdilZ7vC3HkzSvP861Q2eVbrL4udVKW9cc")]
     public class AdsData : ScriptableObject
     {
-        [SerializeField] AdvertisingModules bannerType = AdvertisingModules.Dummy;
+        [SerializeField] AdvertisingModules bannerType = AdvertisingModules.Yandex;
         public AdvertisingModules BannerType => bannerType;
 
-        [SerializeField] AdvertisingModules interstitialType = AdvertisingModules.Dummy;
+        [SerializeField] AdvertisingModules interstitialType = AdvertisingModules.Yandex;
         public AdvertisingModules InterstitialType => interstitialType;
 
-        [SerializeField] AdvertisingModules rewardedVideoType = AdvertisingModules.Dummy;
+        [SerializeField] AdvertisingModules rewardedVideoType = AdvertisingModules.Yandex;
         public AdvertisingModules RewardedVideoType => rewardedVideoType;
+        
+        //Yandex
+        [SerializeField] YandexContainer yandexContainer;
+        public YandexContainer YandexContainer => yandexContainer;
 
         // Providers
         [SerializeField] AdMobData adMobContainer;

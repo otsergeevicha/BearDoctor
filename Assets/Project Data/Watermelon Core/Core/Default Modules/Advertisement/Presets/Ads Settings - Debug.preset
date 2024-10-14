@@ -27,22 +27,22 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: bannerType
-    value: 1
+    value: 4
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: interstitialType
-    value: 1
+    value: 4
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: rewardedVideoType
-    value: 0
+    value: 4
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: adMobContainer.androidBannerID
     value: ca-app-pub-3940256099942544/6300978111
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: adMobContainer.IOSBannerID
+    propertyPath: adMobContainer.iOSBannerID
     value: ca-app-pub-3940256099942544/2934735716
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -50,7 +50,7 @@ Preset:
     value: ca-app-pub-3940256099942544/1033173712
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: adMobContainer.IOSInterstitialID
+    propertyPath: adMobContainer.iOSInterstitialID
     value: ca-app-pub-3940256099942544/4411468910
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -58,7 +58,7 @@ Preset:
     value: ca-app-pub-3940256099942544/5224354917
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: adMobContainer.IOSRewardedVideoID
+    propertyPath: adMobContainer.iOSRewardedVideoID
     value: ca-app-pub-3940256099942544/1712485313
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -70,11 +70,19 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: adMobContainer.androidAppId
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adMobContainer.iosAppId
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: unityAdsContainer.androidAppID
     value: 1234567
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: unityAdsContainer.IOSAppID
+    propertyPath: unityAdsContainer.iOSAppID
     value: 1234567
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -82,7 +90,7 @@ Preset:
     value: banner
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: unityAdsContainer.IOSBannerID
+    propertyPath: unityAdsContainer.iOSBannerID
     value: banner
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -90,7 +98,7 @@ Preset:
     value: video
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: unityAdsContainer.IOSInterstitialID
+    propertyPath: unityAdsContainer.iOSInterstitialID
     value: video
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -98,7 +106,7 @@ Preset:
     value: rewardedVideo
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: unityAdsContainer.IOSRewardedVideoID
+    propertyPath: unityAdsContainer.iOSRewardedVideoID
     value: rewardedVideo
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -110,26 +118,39 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: gdprContainer.enableGDPR
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: gdprContainer.privacyLink
-    value: https://google.com.ua
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: adsFrequency.insterstitialFirstDelay
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: adsFrequency.interstitialShowingDelay
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: testMode
-    value: 0
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: systemLogs
     value: 1
     objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: insterstitialFirstDelay
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: interstitialShowingDelay
+    value: 30
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: isGDPREnabled
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: isIDFAEnabled
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: trackingDescription
+    value: Your data will be used to deliver personalized ads to you.
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: privacyLink
+    value: https://mywebsite.com/privacy
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: termsOfUseLink
+    value: https://mywebsite.com/terms
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
