@@ -22,8 +22,7 @@ namespace Watermelon.Store
         [SerializeField] CurrencyType currencyForAds;
         public int CoinsForAds => coinsForAdsAmount;
         public CurrencyType CurrencyForAds => currencyForAds;
-
-
+        
         public string this[TabType type]
         {
             get => selectedProducts[type].Value;

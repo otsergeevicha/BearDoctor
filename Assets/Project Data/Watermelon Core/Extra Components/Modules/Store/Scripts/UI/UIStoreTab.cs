@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 namespace Watermelon.Store
 {
@@ -18,13 +19,42 @@ namespace Watermelon.Store
 
         private TabData.SimpleTabDelegate onTabSelected;
 
-        public void Init(TabData data,TabData.SimpleTabDelegate onTabSelected)
+        public void Init(TabData data, TabData.SimpleTabDelegate onTabSelected)
         {
             Data = data;
             this.onTabSelected = onTabSelected;
 
-            text.text = Data.Name;
             backImage.color = data.BackgroundColor;
+
+#if UNITY_EDITOR
+            text.text = Data.Name;
+            return;
+#endif
+
+            text.text = GetCurrentName();
+        }
+
+        private const string Russian = "ru";
+        private const string English = "en";
+        private const string Turkish = "tr";
+
+        private string GetCurrentName()
+        {
+            string currentName = Data.Name;
+
+            switch (YG2.lang)
+            {
+                case Russian:
+                    currentName = "Персонажи";
+                    break;
+                case English:
+                    break;
+                case Turkish:
+                    currentName = "Karakterler";
+                    break;
+            }
+
+            return currentName;
         }
 
         public void SetSelectedStatus(bool isSelected)
