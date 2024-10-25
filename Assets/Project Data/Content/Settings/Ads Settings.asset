@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ads Settings
   m_EditorClassIdentifier: 
   bannerType: 4
-  interstitialType: 4
+  interstitialType: 0
   rewardedVideoType: 4
   adMobContainer:
     androidBannerID: ca-app-pub-1712885724409541/2075669230
@@ -44,6 +44,6 @@ MonoBehaviour:
   interstitialShowingDelay: 100
   isGDPREnabled: 0
   isIDFAEnabled: 0
-  trackingDescription: Your data will be used to deliver personalized ads to you.
-  privacyLink: https://mywebsite.com/privacy
-  termsOfUseLink: https://mywebsite.com/terms
+  trackingDescription: 
+  privacyLink: 
+  termsOfUseLink: 

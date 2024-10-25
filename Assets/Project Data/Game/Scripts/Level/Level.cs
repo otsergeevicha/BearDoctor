@@ -13,11 +13,8 @@ namespace Watermelon
         [SerializeField] Zone[] zones;
         public Zone[] Zones => zones;
 
-        public void Start()
-        {
-            YG2.GameReadyAPI();
+        public void Start() => 
             LevelController.OnLevelCreated(this);
-        }
 
         public void OnLevelLoaded(LevelSave levelSave)
         {
