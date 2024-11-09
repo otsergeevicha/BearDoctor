@@ -25,7 +25,7 @@ MonoBehaviour:
     platform: {fileID: 11400000, guid: c2a303d33a9fd394bae4c4b88b9a1c44, type: 2}
     autoApplySettings: 1
     autoPauseGame: 1
-    autoGRA: 1
+    autoGRA: 0
     logInEditor: 1
     archivingBuild: 1
     syncInitSDK: 0

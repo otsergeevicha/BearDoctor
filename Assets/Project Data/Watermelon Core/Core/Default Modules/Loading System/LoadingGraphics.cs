@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 namespace Watermelon
 {
@@ -21,6 +22,7 @@ namespace Watermelon
         {
             backgroundImage.DOFade(0.0f, 0.6f, unscaledTime: true).OnComplete(delegate
             {
+                YG2.GameReadyAPI();
                 Destroy(gameObject);
             });
         }
